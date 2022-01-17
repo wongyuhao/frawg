@@ -17,9 +17,9 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
       <div className='wrapper h-full w-full p-2 lg:p-5 ' >
       <Head>
         <title>HAO.PLACE</title>
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-        </style> 
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"/> 
       </Head>
       <div className='w-full text-center'>
         <a className='text-white text-4xl pt-10 pb-5' style={{fontFamily:"VT323"}} href="https://haoyudoing.com">{"< hao.place >"}</a>
