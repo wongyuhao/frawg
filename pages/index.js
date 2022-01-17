@@ -11,6 +11,7 @@ import klImg from "../public/kl2.jpeg"
 export default function Home({galleryImages, youtubeLinks, quotes}) {
   const yt = youtubeLinks[0];
   const DWindow = dynamic(()=> import("../components/window.js"), { ssr: false })
+  const player = <Player/>;
   return (
     <div className='mx-auto'>
       <div className='wrapper h-full w-full p-2 lg:p-5 ' >
@@ -36,7 +37,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
         className="w-1/3"
         title="LAST VIBED TO - "
         content={
-          <Player/>
+          player
         }
         quotes={quotes}
       />
