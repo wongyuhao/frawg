@@ -3,20 +3,21 @@ import { GraphQLClient, gql } from 'graphql-request'
 import ytstring from './api/yt'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next'
+import dynamic from 'next/dynamic'
 import Player from '../components/player'
 import exitImg from "../public/exit.jpeg"
 import klImg from "../public/kl2.jpeg"
+
 export default function Home({galleryImages, youtubeLinks, quotes}) {
   const yt = youtubeLinks[0];
-  const DWindow = dynamic(()=> {import("../components/window")}, { ssr: false })
+  const DWindow = dynamic(()=> import("../components/window.js"), { ssr: false })
   return (
     <div className='mx-auto'>
       <div className='wrapper h-full w-full p-2 lg:p-5 ' >
       <Head>
         <title>HAO.PLACE</title>
         <style>
-          @import url(&apos;https://fonts.googleapis.com/css2?family=VT323&display=swap&apos;);
+          @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
         </style> 
       </Head>
       <div className='w-full text-center'>

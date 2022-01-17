@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "98.css"
-export default ({title, content, quotes}) => {
+const Window = ({title, content, quotes}) => {
   
     const randAlert = () => {
       if (quotes) {
@@ -32,4 +32,6 @@ export default ({title, content, quotes}) => {
     </div>
     )
 }
+
+export default Window;
 
