@@ -15,7 +15,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
       <Head>
         <title>HAO.PLACE</title>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+          @import url(&apos;https://fonts.googleapis.com/css2?family=VT323&display=swap&apos;);
         </style> 
       </Head>
       <div className='w-full text-center'>
@@ -69,8 +69,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
       />
       {
         galleryImages?.map(
-          (i)=>
-          
+          (i)=>     
           <Window
             className="w-1/3"
             title={i.title.toUpperCase()}
