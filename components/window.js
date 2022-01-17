@@ -9,9 +9,6 @@ export default ({title, content, quotes}) => {
         alert("hi.")
       }
     }
-    useEffect(()=>{
-      import('98.css');
-    },[])
     return (
     <div className='w-full window m-4 max-w-md'>
         <div className='title-bar'>

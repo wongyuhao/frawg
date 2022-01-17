@@ -3,12 +3,13 @@ import { GraphQLClient, gql } from 'graphql-request'
 import ytstring from './api/yt'
 import Image from 'next/image'
 import Link from 'next/link'
-import Window from "../components/window"
+import dynamic from 'next'
 import Player from '../components/player'
 import exitImg from "../public/exit.jpeg"
 import klImg from "../public/kl2.jpeg"
 export default function Home({galleryImages, youtubeLinks, quotes}) {
   const yt = youtubeLinks[0];
+  const DWindow = dynamic(()=> {import("../components/window")}, { ssr: false })
   return (
     <div className='mx-auto'>
       <div className='wrapper h-full w-full p-2 lg:p-5 ' >
@@ -22,7 +23,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
         <a className='text-white text-4xl pt-10 pb-5' style={{fontFamily:"VT323"}} href="https://haoyudoing.com">{"< hao.place >"}</a>
       </div>
       <div className="flex flex-row flex-wrap justify-evenly ">
-      <Window
+      <DWindow
         className="w-1/3"
         title="WELCOME."
         content={
@@ -30,7 +31,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
         }
         quotes={quotes}
       />
-      <Window
+      <DWindow
         className="w-1/3"
         title="LAST VIBED TO - "
         content={
@@ -40,7 +41,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
       />
       {
         yt ?
-        <Window
+        <DWindow
         className="w-1/3"
         title="WORTH A LISTEN -"
         content={
@@ -57,7 +58,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
       />
         : <></>
       }
-      <Window
+      <DWindow
         className="w-1/3 "
         title="RETURN TO REALITY - CLICK HERE"
         content={
@@ -70,7 +71,7 @@ export default function Home({galleryImages, youtubeLinks, quotes}) {
       {
         galleryImages?.map(
           (i)=>     
-          <Window
+          <DWindow
             className="w-1/3"
             title={i.title.toUpperCase()}
             content={
